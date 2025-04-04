@@ -14,7 +14,7 @@ export const clientLoader = async () => {
       
       return data
   } catch (error) {
-      return redirect('/error')
+      return redirect('/account/sign-in')
   }
 }
 

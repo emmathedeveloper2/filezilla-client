@@ -9,9 +9,14 @@
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
+    "@fontsource-variable/spline-sans-mono": "^5.2.5",
+    "@fontsource/geist-sans": "^5.2.5",
+    "@headlessui/react": "^2.2.0",
     "@react-router/node": "^7.4.1",
     "@react-router/serve": "^7.4.1",
     "isbot": "^5.1.17",
+    "lucide-react": "^0.487.0",
+    "mage-icons-react": "^0.7.0-beta",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router": "^7.4.1"

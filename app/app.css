@@ -1,15 +1,93 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: "Spline Sans Mono Variable", "Inter", ui-sans-serif, system-ui,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  --font-geist: "Geist Sans", "Inter", ui-sans-serif, system-ui,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+
+  --nav-height: 50px;
+
+  --color-primary: tomato;
+  --color-primary-foreground: black;
+  --color-secondary: #333;
+  --color-secondary-foreground: white;
 }
 
-html,
-body {
-  @apply bg-white dark:bg-gray-950;
+@layer base {
+  html,
+  body {
+    @apply bg-white dark:bg-black font-sans size-full;
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
+    @media (prefers-color-scheme: dark) {
+      color-scheme: dark;
+    }
+  }
+
+  ::-webkit-scrollbar{
+    display: none;
+  }
+
+  h1 {
+    @apply text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+
+  h4 {
+    @apply text-lg;
+  }
+
+  button {
+    @apply cursor-pointer font-geist
+  }
+}
+
+@layer components {
+
+  .btn {
+    @apply p-2 flex items-center justify-center gap-4
+  }
+
+  .btn:disabled {
+    @apply opacity-50 cursor-not-allowed
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground;
+  }
+
+  .form-input {
+    @apply border border-secondary focus:border-primary focus:outline-none;
+  }
+
+  .alert {
+    @apply p-2 flex items-center justify-center w-full
+  }
+
+  .alert-error {
+    @apply bg-red-300 text-red-500 border border-red-500;
+  }
+
+  .alert-success {
+    @apply bg-green-300 text-green-500 border border-green-500;
+  }
+}
+
+@layer utilities {
+  .first-section {
+    @apply h-[calc(100dvh-var(--nav-height))];
   }
 }
